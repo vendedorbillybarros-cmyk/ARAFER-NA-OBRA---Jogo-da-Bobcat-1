@@ -9,7 +9,7 @@ const PLAYER_COLORS = ['#f0821e', '#38bdf8', '#4ade80', '#c084fc'];
 
 const server = http.createServer((req, res) => {
   if (req.url === '/' || req.url === '/index.html') {
-    const filePath = path.join(__dirname, 'public', 'index.html');
+    const filePath = path.join(__dirname, 'index.html');
     fs.readFile(filePath, (err, data) => {
       if (err) {
         res.writeHead(500);
