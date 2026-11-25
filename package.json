@@ -1,0 +1,12 @@
+{
+  "name": "arafar-na-obra-multiplayer",
+  "version": "1.0.0",
+  "description": "Arafer na Obra - Desvio de Entulho (Multiplayer até 4 jogadores)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}
