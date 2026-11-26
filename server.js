@@ -9,7 +9,7 @@ const PLAYER_COLORS = ['#f0821e', '#38bdf8', '#4ade80', '#c084fc'];
 
 const server = http.createServer((req, res) => {
   if (req.url === '/' || req.url === '/index.html') {
-    const filePath = path.join(__dirname, 'index.html');
+    const filePath = path.join(__dirname, 'public', 'index.html');
     fs.readFile(filePath, (err, data) => {
       if (err) {
         res.writeHead(500);
@@ -39,6 +39,15 @@ function genRoomCode() {
   return rooms.has(code) ? genRoomCode() : code;
 }
 
+function sanitizeCustom(raw) {
+  if (!raw || typeof raw !== 'object') return null;
+  const clean = (v) => (typeof v === 'string' ? v.replace(/[^a-z0-9_]/gi, '').slice(0, 20) : '');
+  const paint = clean(raw.paint) || 'default';
+  const wheel = clean(raw.wheel) || 'default';
+  const skin = clean(raw.skin) || 'none';
+  return { paint, wheel, skin };
+}
+
 function serializePlayers(room) {
   return Array.from(room.players.values()).map((p) => ({
     id: p.id,
@@ -51,6 +60,7 @@ function serializePlayers(room) {
     y: p.y,
     duck: p.duck,
     impl: p.impl,
+    custom: p.custom || null,
   }));
 }
 
@@ -119,6 +129,7 @@ wss.on('connection', (ws) => {
         y: 0,
         duck: false,
         impl: null,
+        custom: sanitizeCustom(data.custom),
       };
       room.players.set(clientId, player);
       rooms.set(code, room);
@@ -164,6 +175,7 @@ wss.on('connection', (ws) => {
         y: 0,
         duck: false,
         impl: null,
+        custom: sanitizeCustom(data.custom),
       };
       room.players.set(clientId, player);
       currentRoom = room;
@@ -219,6 +231,7 @@ wss.on('connection', (ws) => {
       p.duck = !!data.duck;
       p.impl = data.impl || null;
       p.alive = data.alive !== false;
+      if (data.custom) p.custom = sanitizeCustom(data.custom);
       broadcast(currentRoom, {
         type: 'player_state',
         id: clientId,
@@ -227,6 +240,7 @@ wss.on('connection', (ws) => {
         duck: p.duck,
         impl: p.impl,
         alive: p.alive,
+        custom: p.custom || null,
       }, clientId);
     }
 

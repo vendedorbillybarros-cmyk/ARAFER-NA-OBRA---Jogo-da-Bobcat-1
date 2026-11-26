@@ -243,6 +243,160 @@
   .lo-item b{font-size:11px; color:#e9edf4; letter-spacing:.06em; text-transform:uppercase;}
   .scores b.coin{color:#ffd23c;}
 
+  /* ---------- LOJA: ABAS E PERSONALIZAÇÃO ---------- */
+  .coin-ico{
+    display:inline-block; width:9px; height:9px; border-radius:50%;
+    background:radial-gradient(circle at 32% 28%, #fff7b8 0%, #ffd23c 48%, #c97f0a 100%);
+    box-shadow:0 0 0 1px #7a4a08; vertical-align:-1px; margin-right:4px;
+  }
+  .shop-tabs{
+    display:grid; grid-template-columns:1fr 1fr; gap:8px;
+    margin:12px 0 12px; padding:4px;
+    background:#0f131b; border:1px solid #2a3342; border-radius:7px;
+  }
+  .shop-tab{
+    display:flex; align-items:center; justify-content:center; gap:7px;
+    font-family:inherit; font-weight:800; font-size:10.5px; letter-spacing:.13em;
+    text-transform:uppercase; padding:9px 10px; border-radius:5px;
+    border:1px solid transparent; background:transparent; color:#8d99ac;
+    cursor:pointer; transition:all .14s ease;
+  }
+  .shop-tab:hover{color:#e9edf4; background:#181e29;}
+  .shop-tab.active{
+    background:linear-gradient(180deg, rgba(240,130,30,.22), rgba(240,130,30,.08));
+    color:#fff; border-color:var(--orange);
+    box-shadow:0 0 0 1px rgba(240,130,30,.28) inset, 0 6px 16px -10px var(--orange);
+  }
+  .shop-tab svg{width:14px; height:14px; flex:0 0 auto; opacity:.85;}
+  .shop-tab.active svg{opacity:1; color:var(--orange-lt);}
+  .shop-tab .tab-new{
+    font-size:7px; padding:1px 5px; border-radius:3px; letter-spacing:.14em;
+    background:var(--orange); color:#171101; font-weight:900;
+  }
+
+  /* palco de prévia ao vivo da Bobcat */
+  .custom-stage{
+    display:grid; grid-template-columns:minmax(0, 1.25fr) minmax(0, 1fr); gap:12px;
+    align-items:stretch; margin:0 0 12px;
+    background:#10141c; border:1px solid #2b3444; border-radius:7px; padding:10px;
+  }
+  .preview-box{
+    position:relative; border-radius:5px; overflow:hidden;
+    border:1px solid #354155; background:#0d1017;
+    display:flex; align-items:center; justify-content:center; min-height:132px;
+    box-shadow:0 0 0 1px rgba(0,0,0,.45) inset;
+  }
+  .preview-box canvas{
+    width:100%; height:100%; max-height:146px; object-fit:contain;
+    image-rendering:pixelated; image-rendering:crisp-edges; display:block;
+  }
+  .prev-badge{
+    position:absolute; top:6px; left:6px;
+    font-size:7.5px; font-weight:900; letter-spacing:.16em; text-transform:uppercase;
+    padding:3px 7px; border-radius:4px;
+    background:rgba(11,14,20,.82); color:#cbd5e1; border:1px solid #3a4559;
+  }
+  .prev-badge.testing{
+    background:rgba(14,116,144,.9); color:#e0f7ff; border-color:#38bdf8;
+    box-shadow:0 0 12px -2px rgba(56,189,248,.65);
+  }
+  .prev-ctrls{
+    position:absolute; top:6px; right:6px; display:flex; gap:4px;
+  }
+  .prev-mini-btn{
+    font-family:inherit; font-size:8px; font-weight:800; letter-spacing:.1em;
+    text-transform:uppercase; padding:3px 6px; border-radius:4px; cursor:pointer;
+    background:rgba(11,14,20,.84); color:#d4dcea; border:1px solid #3b465a;
+    transition:border-color .12s ease, background .12s ease;
+  }
+  .prev-mini-btn:hover{border-color:var(--orange); color:#fff;}
+  .prev-mini-btn.on{border-color:#38bdf8; color:#bae6fd; background:rgba(14,116,144,.38);}
+
+  .custom-info{
+    display:flex; flex-direction:column; justify-content:space-between; gap:8px;
+    background:#151a24; border:1px solid #262f3e; border-radius:5px; padding:9px 10px;
+  }
+  .custom-info-head{
+    display:flex; align-items:center; justify-content:space-between; gap:6px;
+    border-bottom:1px solid #252e3c; padding-bottom:6px;
+  }
+  .custom-info-head span{font-size:8.5px; letter-spacing:.2em; color:#8d99ac; text-transform:uppercase;}
+  .custom-summary{display:flex; flex-direction:column; gap:5px;}
+  .cs-row{
+    display:flex; align-items:center; justify-content:space-between; gap:8px;
+    font-size:9.5px; line-height:1.25;
+  }
+  .cs-row .cs-k{font-size:8px; letter-spacing:.18em; color:#7b8699; text-transform:uppercase;}
+  .cs-row .cs-v{
+    display:inline-flex; align-items:center; gap:5px;
+    font-weight:800; color:#e9edf4; text-transform:uppercase; letter-spacing:.06em;
+  }
+  .cs-row .cs-v.testing{color:#7dd3fc;}
+  .cs-dot{width:9px; height:9px; border-radius:2px; border:1px solid rgba(255,255,255,.3); flex:0 0 auto;}
+  .custom-info-foot{display:flex; gap:6px; flex-wrap:wrap; margin-top:auto;}
+  .custom-info-foot .btn.small{flex:1 1 auto;}
+
+  /* sub-categorias de personalização */
+  .custom-cats{
+    display:flex; gap:6px; flex-wrap:wrap; margin:0 0 10px;
+  }
+  .cat-pill{
+    display:inline-flex; align-items:center; gap:6px;
+    font-family:inherit; font-size:9.5px; font-weight:800; letter-spacing:.12em;
+    text-transform:uppercase; padding:7px 11px; border-radius:5px; cursor:pointer;
+    background:#141923; color:#9aa6b8; border:1px solid #2b3545;
+    transition:all .12s ease;
+  }
+  .cat-pill:hover{border-color:#4b5a72; color:#e9edf4;}
+  .cat-pill.active{
+    background:#212836; color:#fff; border-color:var(--orange);
+    box-shadow:0 2px 0 #8e4a08;
+  }
+  .cat-pill .cat-cnt{
+    font-size:8px; padding:1px 5px; border-radius:3px;
+    background:#0d1017; color:#7b8699; letter-spacing:.08em;
+  }
+  .cat-pill.active .cat-cnt{background:rgba(240,130,30,.2); color:var(--orange-lt);}
+  .cat-pill.soon-pill{opacity:.78; border-style:dashed;}
+
+  .shop-grid.custom-grid{grid-template-columns:repeat(auto-fill, minmax(144px, 1fr)); gap:8px;}
+  .card.previewing{border-color:#38bdf8; box-shadow:0 0 0 1px #38bdf8 inset, 0 0 20px -10px #38bdf8;}
+  .card .ribbon.test-rib{background:#38bdf8; color:#081c28;}
+  .card .icowrap.custom-ico{
+    height:74px; padding:4px; position:relative;
+    background:linear-gradient(180deg, #9ecfea 0%, #dbeaf5 68%, #c9a878 68%, #b1935f 100%);
+    border-color:#5b6b82;
+  }
+  .card .icowrap.wheel-ico{
+    background:radial-gradient(circle at 50% 50%, #2b3446 0%, #161b26 85%);
+    border-color:#3c485e;
+  }
+  .card canvas.prev-cvs{
+    display:block; image-rendering:pixelated; image-rendering:crisp-edges;
+    max-width:100%; max-height:100%;
+  }
+  .swatch-chip{
+    position:absolute; bottom:4px; right:4px;
+    display:inline-flex; gap:2px; padding:2px; border-radius:3px;
+    background:rgba(11,14,20,.78); border:1px solid rgba(255,255,255,.22);
+  }
+  .swatch-chip i{display:block; width:8px; height:8px; border-radius:1px;}
+  .skin-mode{
+    font-size:7px; letter-spacing:.16em; text-transform:uppercase;
+    padding:1px 5px; border-radius:3px;
+    background:#1e2634; color:#8fb2d9; border:1px solid #2e3c52;
+  }
+  .skin-mode.full{background:#2c2238; color:#d8b4fe; border-color:#4c3666;}
+  .btn.test-btn{background:#1b2638; color:#93c5fd; box-shadow:0 0 0 1px #2f4a70 inset;}
+  .btn.test-btn:hover{background:#24344d; color:#e0f2fe; filter:none;}
+  .btn.test-btn.on{background:#0e7490; color:#e0f7ff; box-shadow:0 0 0 1px #38bdf8 inset;}
+
+  .future-note{
+    background:#111620; border:1px dashed #3b465c; border-radius:6px;
+    padding:10px 12px; margin-bottom:10px; font-size:9.5px; color:#9aa6b8; line-height:1.5;
+  }
+  .future-note b{color:var(--orange-lt);}
+
   footer{
     width:auto; max-width:1440px; margin-top:12px;
     display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;
@@ -283,6 +437,13 @@
     .shop-tile{padding:4px;}
     .shop-tile img{height:calc(var(--tile) * 0.8);}
     .shop-brand .shop-big{height:44px;}
+    .shop-tabs{gap:5px; margin:9px 0;}
+    .shop-tab{font-size:9px; padding:7px 6px; letter-spacing:.08em; gap:4px;}
+    .shop-tab svg{width:12px; height:12px;}
+    .custom-stage{grid-template-columns:1fr; gap:8px; padding:8px;}
+    .preview-box{min-height:112px;}
+    .shop-grid.custom-grid{grid-template-columns:repeat(2,1fr); gap:7px;}
+    .cat-pill{font-size:8.5px; padding:6px 8px;}
     #hud{font-size:12px;}
   }
   @media (min-width:641px){ footer .keys span.touch{display:none;} }
@@ -564,6 +725,67 @@ const IMPLEMENTS = [
   }
 ];
 
+// ---------------- personalização da Bobcat (modular / extensível) ----------------
+const CUSTOM_TABS = [
+  { id: 'paint', label: 'Cores', desc: 'Escolha a pintura principal e os detalhes do chassi da sua Bobcat.' },
+  { id: 'wheel', label: 'Rodas', desc: 'Troque pneus, aros esportivos e até converta para esteira de tanque.' },
+  { id: 'skin',  label: 'Skins', desc: 'Adesivos de obra, padrões táticos, chamas e acabamentos exclusivos.' },
+  { id: 'more',  label: 'Em Breve', soon: true, desc: 'Novas categorias em desenvolvimento para deixar sua máquina única na obra.' }
+];
+
+const CUSTOM_CATALOG = {
+  paint: [
+    { id: 'default',       name: 'Branco Arafer',   price: 0,  main: '#f1f4f8', shad: '#c8ced8', acc: '#f0821e', accShad: '#c46012', desc: 'Pintura original de fábrica da frota Arafer.' },
+    { id: 'cat_yellow',    name: 'Amarelo Obra',    price: 30, main: '#f5c428', shad: '#c99612', acc: '#282d38', accShad: '#161920', desc: 'Clássico amarelo pesado de canteiro com detalhes grafite.' },
+    { id: 'fire_red',      name: 'Vermelho Turbo',  price: 40, main: '#e53935', shad: '#a81d1d', acc: '#ffd23c', accShad: '#c48f12', desc: 'Vermelho vibrante de alta visibilidade com friso dourado.' },
+    { id: 'electric_blue', name: 'Azul Elétrico',   price: 45, main: '#2998ff', shad: '#1967bd', acc: '#f1f4f8', accShad: '#b8c4d4', desc: 'Azul esportivo brilhante com acabamento branco.' },
+    { id: 'tactical_green',name: 'Verde Trator',    price: 50, main: '#3fb950', shad: '#238036', acc: '#ffd23c', accShad: '#c48f12', desc: 'Verde máquina agrícola com detalhes amarelo-ouro.' },
+    { id: 'stealth_black', name: 'Preto Furtivo',   price: 65, main: '#343b49', shad: '#222732', acc: '#f0821e', accShad: '#b3530d', desc: 'Chassi fosco escuro com detalhes laranja Arafer.' },
+    { id: 'royal_purple',  name: 'Roxo Nitro',      price: 75, main: '#9b51e0', shad: '#6a2eb0', acc: '#56ccf2', accShad: '#2589b0', desc: 'Roxo metálico com friso azul ciano estiloso.' },
+    { id: 'hot_pink',      name: 'Rosa Choque',     price: 80, main: '#f4499b', shad: '#b5266c', acc: '#ffe078', accShad: '#cca32d', desc: 'Visual marcante impossível de não notar na corrida.' },
+    { id: 'chrome_silver', name: 'Prata Titânio',   price: 95, main: '#b8c4d4', shad: '#7f8ea3', acc: '#38bdf8', accShad: '#1a7fb3', desc: 'Acabamento aço escovado com toque azul metálico.' }
+  ],
+  wheel: [
+    { id: 'default',     name: 'Pneu de Obra',     price: 0,   desc: 'Rodas originais reforçadas com cubo cinza e eixo laranja.' },
+    { id: 'sport',       name: 'Aro Esportivo',    price: 40,  desc: 'Pneu perfil baixo com calota prateada de 4 raios e cubo vermelho.' },
+    { id: 'gold_rim',    name: 'Aro Dourado',      price: 75,  desc: 'Rodas de liga leve dourada reluzente com faixa branca lateral.' },
+    { id: 'offroad',     name: 'Off-Road Lama',    price: 100, desc: 'Pneus cravudos agressivos com garras profundas e respingos de terra.' },
+    { id: 'flame_wheel', name: 'Roda Turbo Fogo',  price: 135, desc: 'Aro preto esportivo com raios flamejantes e faíscas na pista.' },
+    { id: 'neon_wheel',  name: 'Aro Neon Cyber',   price: 170, desc: 'Pneu carbono com anel LED ciano e rastro luminoso ao rodar.' },
+    { id: 'tracks',      name: 'Esteira Blindada', price: 220, desc: 'Transforma sua Bobcat em máquina de esteira contínua de aço!' }
+  ],
+  skin: [
+    { id: 'none',   name: 'Clássica',        price: 0,   full: false, desc: 'Sem adesivos extras — exibe sua pintura escolhida limpa.' },
+    { id: 'hazard', name: 'Faixa de Obra',   price: 45,  full: false, desc: 'Listras diagonais amarelo e preto + giroflex piscante no teto.' },
+    { id: 'racing', name: 'Faixa Turbo',     price: 65,  full: false, desc: 'Listra esportiva racing, vidro fumê e aerofólio traseiro.' },
+    { id: 'flames', name: 'Chamas da Obra',  price: 120, full: false, desc: 'Labaredas pixeladas lambendo a lateral + brasas ao acelerar.' },
+    { id: 'camo',   name: 'Camuflado',       price: 90,  full: true,  desc: 'Pintura camuflada tática completa com vidro escurecido.' },
+    { id: 'cyber',  name: 'Neon Cyber',      price: 160, full: true,  desc: 'Chassi grafite futurista com circuitos neon e visor ciano.' },
+    { id: 'gold',   name: 'Ouro Maciço VIP', price: 250, full: true,  desc: 'Bobcat folheada a ouro com brilho metálico e capacete VIP.' }
+  ]
+};
+
+const FUTURE_CUSTOM_SLOTS = [
+  { name: 'Giroflex & Luzes',      tag: 'EM BREVE', desc: 'Faróis de LED, giroflex azul/âmbar e strobo para corridas noturnas.' },
+  { name: 'Escapamento & Fumaça',  tag: 'EM BREVE', desc: 'Ponteira cromada, chaminé dupla e fumaça colorida ao acelerar.' },
+  { name: 'Capacete do Operador',  tag: 'EM BREVE', desc: 'Mude o capacete do piloto: coroa, cowboy, soldador e muito mais.' },
+  { name: 'Rastros & Poeira',      tag: 'EM BREVE', desc: 'Efeitos especiais nas rodas: faísca, arco-íris, neve e turbo.' }
+];
+
+const CUSTOM_DEFAULTS = { paint: 'default', wheel: 'default', skin: 'none' };
+let customOwned = {};
+let customEquipped = Object.assign({}, CUSTOM_DEFAULTS);
+
+function ensureCustomDefaults() {
+  for (const cat of Object.keys(CUSTOM_DEFAULTS)) {
+    if (!customOwned[cat] || typeof customOwned[cat] !== 'object') customOwned[cat] = {};
+    customOwned[cat][CUSTOM_DEFAULTS[cat]] = true;
+    const eq = customEquipped[cat];
+    const valid = CUSTOM_CATALOG[cat] && CUSTOM_CATALOG[cat].some(i => i.id === eq) && customOwned[cat][eq];
+    if (!valid) customEquipped[cat] = CUSTOM_DEFAULTS[cat];
+  }
+}
+
 let coins = 0, ownedImpl = {}, equippedId = null, uiLock = false, bucketLoad = 0;
 let levels = {};
 let powerT = 0, powerCd = 0;          // martelo: tempo ativo / recarga
@@ -577,7 +799,13 @@ function loadProgress() {
     levels = JSON.parse(localStorage.getItem('bobcat_levels') || '{}') || {};
     equippedId = localStorage.getItem('bobcat_equipped') || null;
     if (equippedId && !ownedImpl[equippedId]) equippedId = null;
-  } catch (e) { coins = 0; ownedImpl = {}; levels = {}; equippedId = null; }
+    customOwned = JSON.parse(localStorage.getItem('bobcat_custom_owned') || '{}') || {};
+    customEquipped = Object.assign({}, CUSTOM_DEFAULTS, JSON.parse(localStorage.getItem('bobcat_custom_equipped') || '{}') || {});
+  } catch (e) {
+    coins = 0; ownedImpl = {}; levels = {}; equippedId = null;
+    customOwned = {}; customEquipped = Object.assign({}, CUSTOM_DEFAULTS);
+  }
+  ensureCustomDefaults();
 }
 function saveProgress() {
   try {
@@ -585,9 +813,16 @@ function saveProgress() {
     localStorage.setItem('bobcat_owned', JSON.stringify(ownedImpl));
     localStorage.setItem('bobcat_levels', JSON.stringify(levels));
     localStorage.setItem('bobcat_equipped', equippedId || '');
+    localStorage.setItem('bobcat_custom_owned', JSON.stringify(customOwned));
+    localStorage.setItem('bobcat_custom_equipped', JSON.stringify(customEquipped));
   } catch (e) { }
 }
 loadProgress();
+
+const customItemById = (cat, id) => (CUSTOM_CATALOG[cat] || []).find(i => i.id === id) || null;
+const isCustomOwned = (cat, id) => !!(customOwned[cat] && customOwned[cat][id]);
+const ownedCountIn = (cat) => (CUSTOM_CATALOG[cat] || []).filter(i => isCustomOwned(cat, i.id)).length;
+const getActiveCustom = () => ({ paint: customEquipped.paint, wheel: customEquipped.wheel, skin: customEquipped.skin });
 const implById = (id) => IMPLEMENTS.find(i => i.id === id) || null;
 const hasImpl = () => !!(equippedId && ownedImpl[equippedId]);
 const levelOf = (id) => {
@@ -776,7 +1011,7 @@ window.addEventListener('keydown', (e) => {
   else if (c === 'KeyP') { if (state === 'run' || state === 'pause') setPause(state === 'run'); }
   else if (c === 'KeyF') usePower();
   else if (c === 'KeyM') toggleMute();
-  else if (c === 'Escape' && uiLock) { uiLock = false; showStart(); }
+  else if (c === 'Escape' && uiLock) { customPreview = {}; uiLock = false; showStart(); }
 });
 window.addEventListener('keyup', (e) => {
   if (['Space', 'ArrowUp', 'KeyW'].includes(e.code)) releaseJump();
@@ -869,7 +1104,7 @@ function iconTileHTML(id, size, src, cls, label) {
     '</button>';
 }
 function shopTileHTML(id, size) {
-  return iconTileHTML(id, size, SHOP_ICON, '', 'Loja de implementos');
+  return iconTileHTML(id, size, SHOP_ICON, '', 'Loja e Personalização');
 }
 function startTileHTML(id, size) {
   return iconTileHTML(id, size, START_ICON, 'tile-main', 'Começar a obra');
@@ -957,7 +1192,7 @@ function gameOver() {
       (isRecord ? '<div class="record">&#9733; NOVO RECORDE! &#9733;</div>' : '') +
       '<div class="scores"><div><span>PONTOS</span><b>' + fmt(score) + '</b></div>' +
       '<div><span>RECORDE</span><b>' + fmt(hi) + '</b></div>' +
-      '<div><span>OURO</span><b class="coin">+' + earned + '</b></div></div>' +
+      '<div><span>MOEDAS</span><b class="coin">+' + earned + '</b></div></div>' +
       '<div class="row-btns center">' +
       homeTileHTML('btnHomeOver', 92) +
       shopTileHTML('btnShopOver', 92) +
@@ -1062,8 +1297,8 @@ function update(dt) {
     }
   } else {
     bob.coyote = 0.09;
-    // poeira das rodas
-    if (Math.random() < dt * 26) puff(bob.x + 8, GROUND_Y - 3, 1, [DAY.ground, DAY.pebble2], 22, 34);
+    // poeira / faíscas das rodas personalizadas
+    if (Math.random() < dt * 26) puff(bob.x + 8, GROUND_Y - 3, 1, getWheelDustColors(getActiveCustom()), 22, 34);
   }
 
   // poder ativo do martelo + rotação (pra frente ao ativar, pra baixo ao acabar)
@@ -1381,6 +1616,402 @@ function drawHelmets() {
   }
 }
 
+// ---------------- motor pixel-art de personalização da Bobcat ----------------
+const customSpriteCache = new Map();
+let sheetPixelCanvas = null;
+
+function getSheetCtx() {
+  if (!sheetReady) return null;
+  if (!sheetPixelCanvas) {
+    sheetPixelCanvas = document.createElement('canvas');
+    sheetPixelCanvas.width = SPRITE_SHEET_SIZE[0];
+    sheetPixelCanvas.height = SPRITE_SHEET_SIZE[1];
+    const g = sheetPixelCanvas.getContext('2d', { willReadFrequently: true });
+    g.imageSmoothingEnabled = false;
+    g.drawImage(sheet, 0, 0);
+  }
+  return sheetPixelCanvas.getContext('2d', { willReadFrequently: true });
+}
+
+function hexRgb(hex) {
+  return [parseInt(hex.slice(1, 3), 16), parseInt(hex.slice(3, 5), 16), parseInt(hex.slice(5, 7), 16)];
+}
+function sameCol(r, g, b, t) {
+  return r === t[0] && g === t[1] && b === t[2];
+}
+function inWheelDisk(x, y) {
+  if (y < 20) return false;
+  const d1 = (x - 15) * (x - 15) + (y - 28) * (y - 28);
+  const d2 = (x - 38) * (x - 38) + (y - 28) * (y - 28);
+  return d1 <= 69 || d2 <= 69;
+}
+
+const SRC_WHITE = [241, 244, 248];
+const SRC_WSHAD = [200, 206, 216];
+const SRC_ORNG  = [240, 130, 30];
+const SRC_OSHAD = [196, 96, 18];
+const SRC_GLS_D = [52, 96, 122];
+const SRC_GLS_L = [150, 210, 232];
+const SRC_HELM  = [255, 224, 120];
+const SRC_REAR  = [72, 80, 94];
+
+function drawCustomWheelOn(g, cx, cy, wheelId, f2) {
+  const put = (x, y, col) => { g.fillStyle = col; g.fillRect(x, y, 1, 1); };
+  // limpa área exata do disco da roda
+  for (let dy = -8; dy <= 8; dy++) {
+    for (let dx = -8; dx <= 8; dx++) {
+      if (dx * dx + dy * dy <= 69) g.clearRect(cx + dx, cy + dy, 1, 1);
+    }
+  }
+  if (wheelId === 'sport') {
+    for (let dy = -8; dy <= 8; dy++) {
+      for (let dx = -8; dx <= 8; dx++) {
+        const d2 = dx * dx + dy * dy;
+        if (d2 > 69) continue;
+        let col = '#1c202a';
+        if (d2 >= 56) col = '#11131a';
+        else if (d2 >= 30) {
+          // pneu perfil baixo com leves sulcos girando
+          const ang = Math.atan2(dy, dx) + (f2 ? 0.52 : 0);
+          col = (Math.floor(((ang + Math.PI) / (Math.PI * 2)) * 8) % 2 === 0 && d2 > 44) ? '#2b3140' : '#1b1f29';
+        } else if (d2 >= 20) col = '#a9b5c7'; // aro externo metálico
+        else if (d2 >= 5) {
+          // 4 raios girando (+ no frame 0, X no frame 1)
+          const spoke = f2 ? (Math.abs(Math.abs(dx) - Math.abs(dy)) <= 1) : (Math.abs(dx) <= 1 || Math.abs(dy) <= 1);
+          col = spoke ? '#e5ecf5' : '#2a3140';
+        } else if (d2 >= 2) col = '#ef4444'; // cubo esportivo vermelho
+        else col = '#ffd23c';
+        put(cx + dx, cy + dy, col);
+      }
+    }
+  } else if (wheelId === 'gold_rim') {
+    for (let dy = -8; dy <= 8; dy++) {
+      for (let dx = -8; dx <= 8; dx++) {
+        const d2 = dx * dx + dy * dy;
+        if (d2 > 69) continue;
+        let col = '#1b1e27';
+        if (d2 >= 56) col = '#11131a';
+        else if (d2 >= 33 && d2 <= 40) col = '#dce3ee'; // faixa branca clássica
+        else if (d2 > 40) col = '#1f232e';
+        else if (d2 >= 21) col = '#e6a817'; // borda dourada
+        else if (d2 >= 5) {
+          const spoke = f2 ? (Math.abs(Math.abs(dx) - Math.abs(dy)) <= 1) : (Math.abs(dx) <= 1 || Math.abs(dy) <= 1);
+          col = spoke ? ((dx + dy < 0) ? '#fff3a1' : '#ffd23c') : '#523809';
+        } else if (d2 >= 2) col = '#b8760a';
+        else col = '#fff7cc';
+        put(cx + dx, cy + dy, col);
+      }
+    }
+  } else if (wheelId === 'offroad') {
+    for (let dy = -8; dy <= 8; dy++) {
+      for (let dx = -8; dx <= 8; dx++) {
+        const d2 = dx * dx + dy * dy;
+        if (d2 > 69) continue;
+        const ang = Math.atan2(dy, dx) + (f2 ? 0.39 : 0);
+        const lug = Math.floor(((ang + Math.PI) / (Math.PI * 2)) * 10) % 2 === 0;
+        if (d2 >= 54) {
+          if (!lug && d2 >= 62) continue; // recortes de garra cravuda!
+          put(cx + dx, cy + dy, lug ? '#11131a' : '#2c313d');
+          continue;
+        }
+        let col = '#23262f';
+        if (d2 >= 22) {
+          // respingos de lama no pneu girando
+          const mud = ((Math.abs(dx * 3 + dy * 5 + (f2 ? 7 : 0)) % 11) === 0) || (lug && d2 > 42);
+          col = mud ? (d2 > 42 ? '#8a6a48' : '#6c4a2c') : '#232732';
+        } else if (d2 >= 14) col = '#4b5563'; // aço grafite
+        else if (d2 >= 5) {
+          const bolt = f2 ? (Math.abs(dx) === 2 && Math.abs(dy) === 2) : ((dx === 0 && Math.abs(dy) === 3) || (dy === 0 && Math.abs(dx) === 3));
+          col = bolt ? '#f0821e' : '#647082';
+        } else col = '#f59e0b';
+        put(cx + dx, cy + dy, col);
+      }
+    }
+  } else if (wheelId === 'flame_wheel') {
+    for (let dy = -8; dy <= 8; dy++) {
+      for (let dx = -8; dx <= 8; dx++) {
+        const d2 = dx * dx + dy * dy;
+        if (d2 > 69) continue;
+        let col = '#14171f';
+        if (d2 >= 56) col = '#0d0f15';
+        else if (d2 >= 30 && d2 <= 38) col = '#dc2626'; // aro vermelho fogo
+        else if (d2 > 38) col = '#1b1e28';
+        else if (d2 >= 6) {
+          const ang = Math.atan2(dy, dx) + (f2 ? 0.78 : 0) + Math.sqrt(d2) * 0.25;
+          const blade = Math.sin(ang * 3) > 0.12;
+          col = blade ? (d2 < 14 ? '#fef08a' : '#f97316') : '#1c1917';
+        } else col = '#fff7cc';
+        put(cx + dx, cy + dy, col);
+      }
+    }
+  } else if (wheelId === 'neon_wheel') {
+    for (let dy = -8; dy <= 8; dy++) {
+      for (let dx = -8; dx <= 8; dx++) {
+        const d2 = dx * dx + dy * dy;
+        if (d2 > 69) continue;
+        let col = '#121622';
+        if (d2 >= 56) col = '#090c14';
+        else if (d2 >= 26 && d2 <= 36) col = '#00f0ff'; // anel LED ciano
+        else if (d2 > 36) col = '#181e2e';
+        else if (d2 >= 6) {
+          const spoke = f2 ? (Math.abs(Math.abs(dx) - Math.abs(dy)) <= 1) : (Math.abs(dx) <= 1 || Math.abs(dy) <= 1);
+          col = spoke ? '#f43f9c' : '#0f172a';
+        } else col = '#e0ffff';
+        put(cx + dx, cy + dy, col);
+      }
+    }
+  }
+}
+
+function drawTracksOn(g, f2) {
+  // limpa área das duas rodas + vão inferior entre elas
+  for (let y = 20; y <= 37; y++) {
+    for (let x = 7; x <= 46; x++) {
+      if (inWheelDisk(x, y) || (x >= 15 && x <= 38 && y >= 22 && y <= 36)) {
+        g.clearRect(x, y, 1, 1);
+      }
+    }
+  }
+  const put = (x, y, c) => { g.fillStyle = c; g.fillRect(x, y, 1, 1); };
+  // desenha cápsula da esteira blindada (centros x=15 e x=38, y=28.5, raio 7.2)
+  for (let y = 21; y <= 36; y++) {
+    for (let x = 7; x <= 46; x++) {
+      const cx = clamp(x, 15, 38);
+      const dx = x - cx, dy = y - 28.5;
+      const d = Math.sqrt(dx * dx + dy * dy);
+      if (d > 7.6) continue;
+      if (d >= 6.4) {
+        // garras externas da esteira animadas (deslocam 2px entre frames!)
+        const phase = Math.floor((x + (y < 29 ? 0 : 2) + (f2 ? 2 : 0)) / 2) % 2;
+        put(x, y, phase === 0 ? '#11131a' : '#2d3442');
+      } else if (d >= 5.1) {
+        // corrente metálica interna
+        const link = ((x + y + (f2 ? 1 : 0)) % 3 === 0);
+        put(x, y, link ? '#5b667a' : '#232833');
+      } else {
+        // compartimento blindado dos roletes
+        put(x, y, y < 26 ? '#171b24' : '#1f2532');
+      }
+    }
+  }
+  // viga lateral de aço
+  g.fillStyle = '#48505e';
+  g.fillRect(15, 27, 24, 3);
+  g.fillStyle = '#7c8594';
+  g.fillRect(16, 27, 22, 1);
+  // 2 rodas motrizes grandes (traseira e dianteira) + 2 roletes centrais
+  const rollers = [[15, 29, 3.6, true], [23, 30, 2.3, false], [30, 30, 2.3, false], [38, 29, 3.6, true]];
+  for (const [rx, ry, rad, big] of rollers) {
+    for (let dy = -4; dy <= 4; dy++) {
+      for (let dx = -4; dx <= 4; dx++) {
+        const d = Math.sqrt(dx * dx + dy * dy);
+        if (d > rad) continue;
+        let col = '#6b7588';
+        if (d > rad - 1) col = '#11131a';
+        else if (big) {
+          const bolt = f2 ? (Math.abs(dx) === 1 && Math.abs(dy) === 1) : ((dx === 0 && Math.abs(dy) === 2) || (dy === 0 && Math.abs(dx) === 2));
+          col = (d <= 1.1) ? '#f0821e' : (bolt ? '#d5dce6' : '#556072');
+        } else {
+          col = (d <= 1.0) ? '#d5dce6' : '#4a5466';
+        }
+        put(rx + dx, ry + dy, col);
+      }
+    }
+  }
+}
+
+function getCustomSprite(sprName, custom) {
+  if (!sheetReady || !custom) return null;
+  const paintId = custom.paint || 'default';
+  const wheelId = custom.wheel || 'default';
+  const skinId  = custom.skin  || 'none';
+  if (paintId === 'default' && wheelId === 'default' && skinId === 'none') return null;
+
+  const key = sprName + '|' + paintId + '|' + wheelId + '|' + skinId;
+  if (customSpriteCache.has(key)) return customSpriteCache.get(key);
+
+  const r = SPRITE_MAP[sprName];
+  if (!r) return null;
+  const sctx = getSheetCtx();
+  if (!sctx) return null;
+
+  const w = r[2], h = r[3];
+  const imgData = sctx.getImageData(r[0], r[1], w, h);
+  const d = imgData.data;
+
+  const paint = customItemById('paint', paintId) || CUSTOM_CATALOG.paint[0];
+  const pMain = hexRgb(paint.main);
+  const pShad = hexRgb(paint.shad);
+  const pAcc  = hexRgb(paint.acc);
+  const pAShd = hexRgb(paint.accShad);
+
+  // cores auxiliares para skins
+  const CAMO_PAL = [[85,107,47], [47,62,36], [168,152,107], [37,42,36]];
+
+  for (let y = 0; y < h; y++) {
+    for (let x = 0; x < w; x++) {
+      const idx = (y * w + x) * 4;
+      if (d[idx + 3] === 0) continue;
+      if (x > 47 || inWheelDisk(x, y)) continue;
+
+      const cr = d[idx], cg = d[idx + 1], cb = d[idx + 2];
+      const isMain = sameCol(cr, cg, cb, SRC_WHITE);
+      const isShad = sameCol(cr, cg, cb, SRC_WSHAD);
+      const isAcc  = sameCol(cr, cg, cb, SRC_ORNG);
+      const isAShd = sameCol(cr, cg, cb, SRC_OSHAD);
+      const isGlsD = sameCol(cr, cg, cb, SRC_GLS_D);
+      const isGlsL = sameCol(cr, cg, cb, SRC_GLS_L);
+      const isHelm = sameCol(cr, cg, cb, SRC_HELM);
+      const isBody = isMain || isShad || isAcc || isAShd;
+
+      let out = null;
+
+      // 1. Pintura base
+      if (paintId !== 'default') {
+        if (isMain) out = pMain;
+        else if (isShad) out = pShad;
+        else if (isAcc) out = pAcc;
+        else if (isAShd) out = pAShd;
+      }
+
+      // 2. Skins sobre o chassi
+      if (skinId === 'hazard') {
+        // faixas diagonais de segurança na lateral/saia
+        if (isBody && y >= 15 && y <= 23 && x >= 10 && x <= 44) {
+          out = ((x + y) % 6 < 3) ? [255, 210, 48] : [22, 26, 34];
+        } else if (isAcc || isAShd) {
+          out = isAcc ? [255, 210, 48] : [196, 148, 18];
+        }
+      } else if (skinId === 'racing') {
+        if ((isMain || isShad) && y === 16 && x >= 11 && x <= 43) out = [239, 68, 68];
+        else if ((isMain || isShad) && (y === 15 || y === 17) && x >= 11 && x <= 43) out = [248, 250, 252];
+        else if ((isMain || isShad) && x >= 11 && x <= 14 && y >= 13 && y <= 18) {
+          out = ((x + y) % 2 === 0) ? [248, 250, 252] : [20, 24, 32];
+        } else if (isGlsD) out = [24, 34, 48];
+        else if (isGlsL) out = [68, 86, 108];
+      } else if (skinId === 'flames') {
+        if (isBody && x >= 11 && x <= 45 && y >= 12 && y <= 22) {
+          const wave = Math.sin(y * 1.15) * 4.5 + Math.cos(y * 2.1) * 2.5;
+          const reach = 42 - x; // chamas lambem da frente (dir) para trás (esq)
+          if (reach < 15 + wave) {
+            if (reach < 5 + wave * 0.45) out = [254, 240, 138];
+            else if (reach < 10 + wave * 0.75) out = [249, 115, 22];
+            else out = [220, 38, 38];
+          }
+        }
+        if ((isAcc || isAShd) && y <= 3) out = [249, 115, 22];
+      } else if (skinId === 'camo') {
+        if (isBody) {
+          const v = Math.sin(x * 0.42 + y * 0.28) + Math.cos(x * 0.23 - y * 0.52);
+          const ci = v < -0.65 ? 3 : v < 0.05 ? 1 : v < 0.72 ? 0 : 2;
+          out = CAMO_PAL[ci];
+        } else if (isGlsD) out = [26, 46, 34];
+        else if (isGlsL) out = [64, 98, 76];
+        else if (isHelm) out = [138, 156, 86];
+      } else if (skinId === 'cyber') {
+        if (isMain || isShad) {
+          const circuit = ((y === 14 || y === 19) && x >= 12 && x <= 42) || (x === 24 && y >= 4 && y <= 19);
+          const mag = (y === 12 && x >= 14 && x <= 26) || (x === 12 && y >= 13 && y <= 19);
+          out = circuit ? [0, 240, 255] : mag ? [244, 63, 156] : (isMain ? [22, 28, 42] : [13, 17, 27]);
+        } else if (isAcc || isAShd) {
+          out = (x % 4 < 2) ? [0, 240, 255] : [244, 63, 156];
+        } else if (isGlsD) out = [8, 51, 68];
+        else if (isGlsL) out = [34, 211, 238];
+        else if (isHelm) out = [255, 79, 216];
+      } else if (skinId === 'gold') {
+        if (isMain || isShad) {
+          const shine = (x + y) % 14;
+          if (shine <= 1) out = [255, 249, 196];
+          else if (shine <= 4) out = [255, 214, 64];
+          else if (isShad || shine >= 11) out = [176, 120, 12];
+          else out = [235, 176, 26];
+        } else if (isAcc || isAShd) {
+          out = isAcc ? [26, 29, 38] : [14, 16, 22];
+        } else if (isGlsD) out = [66, 48, 16];
+        else if (isGlsL) out = [208, 172, 82];
+        else if (isHelm) out = [255, 248, 200];
+      }
+
+      if (out) {
+        d[idx] = out[0]; d[idx + 1] = out[1]; d[idx + 2] = out[2];
+      }
+    }
+  }
+
+  const c = document.createElement('canvas');
+  c.width = w; c.height = h;
+  const g = c.getContext('2d');
+  g.imageSmoothingEnabled = false;
+  g.putImageData(imgData, 0, 0);
+
+  // extras de pixel-art das skins (giroflex / aerofólio)
+  if (skinId === 'hazard') {
+    g.fillStyle = '#181b22'; g.fillRect(18, 0, 5, 1);
+    g.fillStyle = '#ff9800'; g.fillRect(19, 0, 3, 1);
+  } else if (skinId === 'racing') {
+    g.fillStyle = '#141821'; g.fillRect(6, 2, 6, 2);
+    g.fillStyle = '#ef4444'; g.fillRect(7, 2, 4, 1);
+    g.fillStyle = '#2b3242'; g.fillRect(10, 4, 2, 2);
+  }
+
+  // 3. Rodas personalizadas
+  if (wheelId !== 'default') {
+    const f2 = sprName.endsWith('2') || sprName.indexOf('_t2_') !== -1;
+    if (wheelId === 'tracks') {
+      drawTracksOn(g, f2);
+    } else {
+      drawCustomWheelOn(g, 15, 28, wheelId, f2);
+      drawCustomWheelOn(g, 38, 28, wheelId, f2);
+    }
+  }
+
+  if (customSpriteCache.size > 260) customSpriteCache.clear();
+  customSpriteCache.set(key, c);
+  return c;
+}
+
+function drawCustomBobcat(targetCtx, sprName, x, y, custom, nowTime) {
+  const rx = Math.round(x), ry = Math.round(y);
+  const customCvs = getCustomSprite(sprName, custom);
+  if (customCvs) {
+    targetCtx.drawImage(customCvs, rx, ry);
+  } else {
+    const r = SPRITE_MAP[sprName];
+    if (r && sheetReady) targetCtx.drawImage(sheet, r[0], r[1], r[2], r[3], rx, ry, r[2], r[3]);
+  }
+  // detalhes dinâmicos ao vivo (giroflex piscando / brilho VIP / glow neon)
+  if (!custom) return;
+  const t = nowTime || 0;
+  if (custom.skin === 'hazard') {
+    const on = Math.floor(t * 7) % 2 === 0;
+    targetCtx.fillStyle = on ? '#ffe066' : '#c46012';
+    targetCtx.fillRect(rx + 19, ry, 3, 1);
+    if (on) {
+      targetCtx.fillStyle = 'rgba(255, 210, 60, 0.35)';
+      targetCtx.fillRect(rx + 18, ry - 1, 5, 2);
+    }
+  } else if (custom.skin === 'gold') {
+    const phase = Math.floor(t * 4) % 4;
+    if (phase === 0) {
+      targetCtx.fillStyle = '#fffef0';
+      targetCtx.fillRect(rx + 28, ry + 13, 2, 1);
+      targetCtx.fillRect(rx + 29, ry + 12, 1, 3);
+    } else if (phase === 2) {
+      targetCtx.fillStyle = '#fffef0';
+      targetCtx.fillRect(rx + 15, ry + 15, 2, 1);
+    }
+  }
+}
+
+function getWheelDustColors(custom) {
+  if (!custom) return [DAY.ground, DAY.pebble2];
+  if (custom.wheel === 'neon_wheel' || custom.skin === 'cyber') return ['#00f0ff', '#f43f9c', '#9ecfea'];
+  if (custom.wheel === 'flame_wheel' || custom.skin === 'flames') return ['#f97316', '#facc15', '#dc2626'];
+  if (custom.skin === 'gold') return ['#ffd23c', '#fff3a1', DAY.ground];
+  if (custom.wheel === 'offroad' || custom.wheel === 'tracks') return ['#6c4a2c', '#8a6a48', '#52381e'];
+  return [DAY.ground, DAY.pebble2];
+}
+
 function drawBobcat() {
   if (window.mp && window.mp.enabled) window.mp.drawOpponents();
   const air = !bob.grounded;
@@ -1395,7 +2026,8 @@ function drawBobcat() {
   const f = Math.floor(time * (buzzing ? 34 : (air ? 8 : 11))) % 2;
   const jx = buzzing ? Math.round(rand(-1.4, 1.4)) : 0;
   const jy = buzzing ? Math.round(rand(-1.2, 1.2)) : 0;
-  if (state === 'over') { drawSprite(pre + 'a1', bob.x, bob.y, false); return; }
+  const curCustom = getActiveCustom();
+  if (state === 'over') { drawCustomBobcat(ctx, pre + 'a1', bob.x, bob.y, curCustom, time); return; }
   const arm = air ? 'b' : 'a';
   let sprName = pre + arm + (f + 1);
   if (equippedId === 'martelo' && hammerTilt >= 0.2) {
@@ -1403,7 +2035,7 @@ function drawBobcat() {
     else if (hammerTilt < 0.82) sprName = 'bob_ma_t2_' + arm;
     else sprName = 'bob_ma_f_' + arm + (f + 1);
   }
-  drawSprite(sprName, bob.x + jx, bob.y + jy, false);
+  drawCustomBobcat(ctx, sprName, bob.x + jx, bob.y + jy, curCustom, time);
   if (buzzing && hammerTilt >= 0.82) {
     // faíscas e impacto na ponta frontal do martelete
     const sx = Math.round(bob.x + jx + (f === 1 ? 79 : 76));
@@ -1477,9 +2109,200 @@ function frame(now) {
   if (dt > 0.05) dt = 0.05;
   update(dt);
   render();
+  renderCustomPreview(dt);
 }
 
 // ---------------- telas (início / loja) ----------------
+let shopTab = 'impl';           // 'impl' | 'custom'
+let customSubTab = 'paint';     // 'paint' | 'wheel' | 'skin' | 'more'
+let customPreview = {};         // overrides temporários de teste: { paint?, wheel?, skin? }
+let previewNight = false;
+let previewScroll = 0;
+let previewJumpY = 0;
+let previewJumpVy = 0;
+let previewParts = [];
+
+function getEffectiveCustom() {
+  return {
+    paint: customPreview.paint || customEquipped.paint,
+    wheel: customPreview.wheel || customEquipped.wheel,
+    skin:  customPreview.skin  || customEquipped.skin
+  };
+}
+
+function getPreviewUnownedList() {
+  const list = [];
+  for (const cat of ['paint', 'wheel', 'skin']) {
+    const pid = customPreview[cat];
+    if (pid && !isCustomOwned(cat, pid)) {
+      const it = customItemById(cat, pid);
+      if (it) list.push({ cat, item: it });
+    }
+  }
+  return list;
+}
+
+function renderCustomPreview(dt) {
+  const pcvs = document.getElementById('customPreviewCvs');
+  if (!pcvs || !sheetReady) return;
+  const g = pcvs.getContext('2d');
+  g.imageSmoothingEnabled = false;
+  const pw = pcvs.width, ph = pcvs.height;
+  const gy = 56;
+
+  previewScroll += dt * 115;
+  if (previewJumpY < 0 || previewJumpVy !== 0) {
+    previewJumpVy += 520 * dt;
+    previewJumpY += previewJumpVy * dt;
+    if (previewJumpY >= 0) {
+      previewJumpY = 0; previewJumpVy = 0;
+      const cols = getWheelDustColors(getEffectiveCustom());
+      for (let i = 0; i < 6; i++) {
+        previewParts.push({
+          x: 60 + Math.random() * 24, y: gy - 1,
+          vx: -24 - Math.random() * 26, vy: -14 - Math.random() * 24,
+          life: 0.38, max: 0.38, c: cols[i % cols.length]
+        });
+      }
+    }
+  } else if (Math.random() < dt * 18) {
+    const cols = getWheelDustColors(getEffectiveCustom());
+    previewParts.push({
+      x: 54 + Math.random() * 8, y: gy - 2,
+      vx: -34 - Math.random() * 20, vy: -8 - Math.random() * 18,
+      life: 0.34, max: 0.34, c: cols[Math.floor(Math.random() * cols.length)]
+    });
+  }
+
+  for (let i = previewParts.length - 1; i >= 0; i--) {
+    const p = previewParts[i];
+    p.life -= dt;
+    p.x += p.vx * dt; p.y += p.vy * dt; p.vy += 120 * dt;
+    if (p.life <= 0) previewParts.splice(i, 1);
+  }
+
+  // céu
+  const pal = previewNight ? NIGHT : DAY;
+  const sky = g.createLinearGradient(0, 0, 0, gy);
+  sky.addColorStop(0, pal.skyTop);
+  sky.addColorStop(1, pal.skyBot);
+  g.fillStyle = sky;
+  g.fillRect(0, 0, pw, gy);
+
+  // estrelas / sol / lua
+  if (previewNight) {
+    g.fillStyle = 'rgba(255,255,255,0.65)';
+    for (let i = 0; i < 12; i++) {
+      const sx = (i * 37 + 11) % (pw - 10);
+      const sy = (i * 19 + 5) % 30;
+      g.fillRect(sx, sy, 1, 1);
+    }
+  }
+  g.fillStyle = pal.sun;
+  g.fillRect(132, 8, 9, 9);
+  g.fillStyle = pal.sunCore;
+  g.fillRect(133, 9, 6, 6);
+
+  // silhueta de prédios ao fundo
+  const boff = (previewScroll * 0.2) % 160;
+  g.fillStyle = pal.farA;
+  const blds = [[8,18,16],[28,12,26],[45,22,18],[74,16,30],[96,24,15],[124,18,22],[146,12,20]];
+  for (let pass = -1; pass <= 1; pass++) {
+    for (const b of blds) {
+      const bx = Math.round(b[0] - boff + pass * 160);
+      if (bx > pw + 25 || bx + b[1] < -25) continue;
+      g.fillRect(bx, gy - b[2], b[1], b[2]);
+      if (previewNight) {
+        g.fillStyle = 'rgba(255,214,120,0.75)';
+        g.fillRect(bx + 3, gy - b[2] + 4, 2, 2);
+        g.fillRect(bx + 8, gy - b[2] + 9, 2, 2);
+        g.fillStyle = pal.farA;
+      }
+    }
+  }
+
+  // solo
+  g.fillStyle = pal.ground;
+  g.fillRect(0, gy, pw, ph - gy);
+  g.fillStyle = pal.groundEdge;
+  g.fillRect(0, gy, pw, 2);
+  const goff = previewScroll % 32;
+  g.fillStyle = pal.pebble2;
+  for (let x = -32; x < pw + 32; x += 32) {
+    g.fillRect(Math.round(x - goff), gy + 5, 10, 2);
+    g.fillRect(Math.round(x - goff) + 16, gy + 10, 8, 1);
+  }
+
+  // sombra da Bobcat
+  const alt = Math.max(0, -previewJumpY);
+  const srad = Math.max(10, Math.round(21 - alt * 0.35));
+  g.fillStyle = 'rgba(0,0,0,' + clamp(0.28 - alt * 0.008, 0.08, 0.28).toFixed(2) + ')';
+  g.fillRect(80 - srad, gy + 1, srad * 2, 2);
+
+  // partículas atrás das rodas
+  for (const p of previewParts) {
+    g.globalAlpha = clamp(p.life / p.max, 0, 1);
+    g.fillStyle = p.c;
+    g.fillRect(Math.round(p.x), Math.round(p.y), 2, 2);
+  }
+  g.globalAlpha = 1;
+
+  // Bobcat animada com implemento equipado + customização atual/testada
+  const eff = getEffectiveCustom();
+  const pre = equippedId === 'pa' ? 'bob_pa_' : equippedId === 'martelo' ? 'bob_ma_' : 'bob_';
+  const air = previewJumpY < -1;
+  const f = Math.floor(time * (air ? 8 : 11)) % 2;
+  const spr = pre + (air ? 'b' : 'a') + (f + 1);
+  const bobX = equippedId ? 48 : 52;
+  const bobY = Math.round((gy - 36) + previewJumpY);
+  drawCustomBobcat(g, spr, bobX, bobY, eff, time);
+}
+
+function renderCustomThumbnails(root) {
+  if (!sheetReady) { setTimeout(() => renderCustomThumbnails(root), 40); return; }
+  for (const cvsEl of root.querySelectorAll('canvas[data-prev-cat]')) {
+    const cat = cvsEl.dataset.prevCat;
+    const id  = cvsEl.dataset.prevId;
+    const g = cvsEl.getContext('2d');
+    g.imageSmoothingEnabled = false;
+    g.clearRect(0, 0, cvsEl.width, cvsEl.height);
+
+    if (cat === 'wheel') {
+      // zoom limpo nas rodas (ou na esteira completa!)
+      const tempCustom = { paint: customEquipped.paint, wheel: id, skin: 'none' };
+      const sprCvs = getCustomSprite('bob_a1', tempCustom);
+      if (id === 'tracks') {
+        if (sprCvs) g.drawImage(sprCvs, 6, 19, 42, 19, 2, 10, 126, 57);
+      } else {
+        if (sprCvs) {
+          g.drawImage(sprCvs, 5, 19, 21, 19, 34, 9, 63, 57);
+        } else {
+          const r = SPRITE_MAP.bob_a1;
+          g.drawImage(sheet, r[0] + 5, r[1] + 19, 21, 19, 34, 9, 63, 57);
+        }
+      }
+    } else if (cat === 'paint') {
+      const tempCustom = { paint: id, wheel: 'default', skin: 'none' };
+      const sprCvs = getCustomSprite('bob_a1', tempCustom);
+      if (sprCvs) g.drawImage(sprCvs, 3, 0, 50, 38, 15, 0, 100, 76);
+      else {
+        const r = SPRITE_MAP.bob_a1;
+        g.drawImage(sheet, r[0] + 3, r[1], 50, 38, 15, 0, 100, 76);
+      }
+    } else if (cat === 'skin') {
+      const it = customItemById('skin', id);
+      const basePaint = (it && it.full) ? 'default' : customEquipped.paint;
+      const tempCustom = { paint: basePaint, wheel: 'default', skin: id };
+      const sprCvs = getCustomSprite('bob_a1', tempCustom);
+      if (sprCvs) g.drawImage(sprCvs, 3, 0, 50, 38, 15, 0, 100, 76);
+      else {
+        const r = SPRITE_MAP.bob_a1;
+        g.drawImage(sheet, r[0] + 3, r[1], 50, 38, 15, 0, 100, 76);
+      }
+    }
+  }
+}
+
 function powerLine(it) {
   if (!ownedImpl[it.id]) return it.power;
   if (it.id === 'martelo') return 'QUEBRA ' + powerDuration() + 'S &middot; RECARGA 45S';
@@ -1510,8 +2333,8 @@ function cardHTML(it) {
       ? '<button class="btn small eq" data-act="unequip" data-id="' + it.id + '" title="Clique para remover">EQUIPADO &#10003;</button>'
       : '<button class="btn small" data-act="equip" data-id="' + it.id + '">EQUIPAR</button>';
     if (maxed) actions += '<button class="btn small up" disabled>N&Iacute;VEL M&Aacute;X.</button>';
-    else if (coins >= cost) actions += '<button class="btn small up" data-act="up" data-id="' + it.id + '">&#9650; ' + cost + ' OURO</button>';
-    else actions += '<button class="btn small up" disabled>&#9650; ' + cost + ' OURO</button>';
+    else if (coins >= cost) actions += '<button class="btn small up" data-act="up" data-id="' + it.id + '">&#9650; ' + cost + ' MOEDAS</button>';
+    else actions += '<button class="btn small up" disabled>&#9650; ' + cost + ' MOEDAS</button>';
   }
 
   return '<div class="card' + (isEq ? ' equipped' : '') + (isOwned ? ' owned' : '') + '">' +
@@ -1521,46 +2344,282 @@ function cardHTML(it) {
     '<h3>' + it.name + '</h3>' +
     '<p>' + it.desc + '</p>' +
     (isOwned ? pipsHTML(it) : '') +
-    '<div class="price">' + (isOwned ? '<span class="owned-tag">NA GARAGEM</span>' : (it.price === 0 ? 'GR&Aacute;TIS' : it.price + ' OURO')) + '</div>' +
+    '<div class="price">' + (isOwned ? '<span class="owned-tag">NA GARAGEM</span>' : (it.price === 0 ? 'GR&Aacute;TIS' : '<span class="coin-ico"></span>' + it.price + ' MOEDAS')) + '</div>' +
     '<div class="row-btns tight">' + actions + '</div>' +
     '</div>';
 }
 
-function soonHTML(name) {
+function soonHTML(name, customDesc) {
   return '<div class="card soon">' +
     '<div class="icowrap"><div class="ico soon-ico">?</div></div>' +
     '<div class="power">BLOQUEADO</div>' +
     '<h3>' + name + '</h3>' +
-    '<p>Implemento em desenvolvimento na oficina.</p>' +
+    '<p>' + (customDesc || 'Implemento em desenvolvimento na oficina.') + '</p>' +
     '<div class="price">&mdash;</div>' +
     '<button class="btn small" disabled>EM BREVE</button>' +
     '</div>';
 }
 
-function showShop() {
-  const cards = IMPLEMENTS.map(cardHTML).join('') + soonHTML('Garra / Pinça');
+function customCardHTML(cat, it) {
+  const isOwned = isCustomOwned(cat, it.id);
+  const isEq = customEquipped[cat] === it.id;
+  const isTesting = customPreview[cat] === it.id && !isEq;
+  const canBuy = coins >= it.price;
+
+  let ribbon = '';
+  if (isTesting) ribbon = '<div class="ribbon test-rib">TESTANDO</div>';
+  else if (isEq) ribbon = '<div class="ribbon">EM USO</div>';
+
+  let extraBadge = '';
+  if (cat === 'paint') {
+    extraBadge = '<span class="swatch-chip"><i style="background:' + it.main + '"></i><i style="background:' + it.acc + '"></i></span>';
+  }
+  let subTag = '';
+  if (cat === 'skin' && it.id !== 'none') {
+    subTag = '<div class="skin-mode' + (it.full ? ' full' : '') + '">' + (it.full ? 'VISUAL COMPLETO' : 'COMBINA COM COR') + '</div>';
+  }
+
+  let actions = '';
+  if (isOwned) {
+    actions = isEq
+      ? '<button class="btn small eq" disabled>EQUIPADO &#10003;</button>'
+      : '<button class="btn small" data-cact="equip" data-cat="' + cat + '" data-id="' + it.id + '">EQUIPAR</button>';
+  } else {
+    actions =
+      '<button class="btn small test-btn' + (isTesting ? ' on' : '') + '" data-cact="test" data-cat="' + cat + '" data-id="' + it.id + '">' +
+      (isTesting ? 'TESTANDO' : 'TESTAR') + '</button>' +
+      (canBuy
+        ? '<button class="btn small" data-cact="buy" data-cat="' + cat + '" data-id="' + it.id + '">COMPRAR</button>'
+        : '<button class="btn small" disabled>FALTAM ' + (it.price - Math.floor(coins)) + '</button>');
+  }
+
+  return '<div class="card' + (isTesting ? ' previewing' : (isEq ? ' equipped' : '')) + (isOwned ? ' owned' : '') + '">' +
+    ribbon +
+    '<div class="icowrap custom-ico' + (cat === 'wheel' ? ' wheel-ico' : '') + '" data-cact="' + (isOwned ? 'equip' : 'test') + '" data-cat="' + cat + '" data-id="' + it.id + '" style="cursor:pointer" title="Clique para ' + (isOwned ? 'equipar' : 'testar na prévia') + '">' +
+    '<canvas class="prev-cvs" width="130" height="76" data-prev-cat="' + cat + '" data-prev-id="' + it.id + '"></canvas>' +
+    extraBadge +
+    '</div>' +
+    subTag +
+    '<h3>' + it.name + '</h3>' +
+    '<p>' + it.desc + '</p>' +
+    '<div class="price">' +
+    (isOwned
+      ? '<span class="owned-tag">NA GARAGEM</span>'
+      : (it.price === 0 ? 'GR&Aacute;TIS' : '<span class="coin-ico"></span>' + it.price + ' MOEDAS')) +
+    '</div>' +
+    '<div class="row-btns tight">' + actions + '</div>' +
+    '</div>';
+}
+
+function buildCustomTabHTML() {
+  const eff = getEffectiveCustom();
+  const pItem = customItemById('paint', eff.paint) || CUSTOM_CATALOG.paint[0];
+  const wItem = customItemById('wheel', eff.wheel) || CUSTOM_CATALOG.wheel[0];
+  const sItem = customItemById('skin',  eff.skin)  || CUSTOM_CATALOG.skin[0];
+  const unownedPreview = getPreviewUnownedList();
+  const testingAny = unownedPreview.length > 0;
+  const totalTestCost = unownedPreview.reduce((acc, x) => acc + x.item.price, 0);
+
+  const catPills = CUSTOM_TABS.map((t) => {
+    const active = customSubTab === t.id;
+    const cnt = t.soon ? 'BREVE' : (ownedCountIn(t.id) + '/' + CUSTOM_CATALOG[t.id].length);
+    return '<button class="cat-pill' + (active ? ' active' : '') + (t.soon ? ' soon-pill' : '') + '" data-subtab="' + t.id + '">' +
+      t.label + ' <span class="cat-cnt">' + cnt + '</span></button>';
+  }).join('');
+
+  const activeTabMeta = CUSTOM_TABS.find(t => t.id === customSubTab) || CUSTOM_TABS[0];
+
+  let gridHTML = '';
+  if (customSubTab === 'more') {
+    gridHTML =
+      '<div class="future-note"><b>OFICINA EM EXPANS&Atilde;O:</b> Esta &aacute;rea j&aacute; est&aacute; preparada para receber novas categorias de personaliza&ccedil;&atilde;o compr&aacute;veis com moedas nas pr&oacute;ximas atualiza&ccedil;&otilde;es!</div>' +
+      '<div class="shop-grid custom-grid">' +
+      FUTURE_CUSTOM_SLOTS.map(s => soonHTML(s.name, s.desc)).join('') +
+      '</div>';
+  } else {
+    gridHTML = '<div class="shop-grid custom-grid">' +
+      CUSTOM_CATALOG[customSubTab].map(it => customCardHTML(customSubTab, it)).join('') +
+      '</div>';
+  }
+
+  let footBtns = '';
+  if (testingAny) {
+    footBtns =
+      '<button class="btn small ghost" id="btnClearPreview">RESTAURAR</button>' +
+      (coins >= totalTestCost
+        ? '<button class="btn small" id="btnBuyPreview">COMPRAR PR&Eacute;VIA (' + totalTestCost + ')</button>'
+        : '<button class="btn small" disabled>TOTAL: ' + totalTestCost + ' MOEDAS</button>');
+  } else {
+    footBtns = '<button class="btn small ghost" id="btnResetLook" title="Voltar ao visual padrão de fábrica">PADR&Atilde;O DE F&Aacute;BRICA</button>';
+  }
+
+  return (
+    '<div class="custom-stage">' +
+      '<div class="preview-box">' +
+        '<canvas id="customPreviewCvs" width="160" height="72"></canvas>' +
+        '<div class="prev-badge' + (testingAny ? ' testing' : '') + '">' + (testingAny ? 'TESTANDO VISUAL' : 'PR&Eacute;VIA AO VIVO') + '</div>' +
+        '<div class="prev-ctrls">' +
+          '<button class="prev-mini-btn' + (previewNight ? ' on' : '') + '" id="btnPrevNight">' + (previewNight ? 'NOITE' : 'DIA') + '</button>' +
+          '<button class="prev-mini-btn" id="btnPrevJump">PULAR</button>' +
+        '</div>' +
+      '</div>' +
+      '<div class="custom-info">' +
+        '<div class="custom-info-head">' +
+          '<span>' + (testingAny ? 'COMBO EM TESTE' : 'VISUAL EQUIPADO') + '</span>' +
+          '<span style="color:' + (testingAny ? '#7dd3fc' : 'var(--orange-lt)') + '">' + (equippedId ? implById(equippedId).name.toUpperCase() : 'BRA&Ccedil;O') + '</span>' +
+        '</div>' +
+        '<div class="custom-summary">' +
+          '<div class="cs-row"><span class="cs-k">COR</span><span class="cs-v' + (customPreview.paint ? ' testing' : '') + '"><span class="cs-dot" style="background:' + pItem.main + '"></span>' + pItem.name + '</span></div>' +
+          '<div class="cs-row"><span class="cs-k">RODAS</span><span class="cs-v' + (customPreview.wheel ? ' testing' : '') + '">' + wItem.name + '</span></div>' +
+          '<div class="cs-row"><span class="cs-k">SKIN</span><span class="cs-v' + (customPreview.skin ? ' testing' : '') + '">' + sItem.name + '</span></div>' +
+        '</div>' +
+        '<div class="custom-info-foot">' + footBtns + '</div>' +
+      '</div>' +
+    '</div>' +
+    '<div class="custom-cats">' + catPills + '</div>' +
+    '<p class="sub small">' + activeTabMeta.desc + '</p>' +
+    gridHTML
+  );
+}
+
+function showShop(forceTab, forceSubTab) {
+  if (forceTab) shopTab = forceTab;
+  if (forceSubTab) customSubTab = forceSubTab;
+  const prevPanel = elOverlay.querySelector('.panel.shop');
+  const savedScroll = prevPanel ? prevPanel.scrollTop : 0;
+
+  const isImpl = shopTab === 'impl';
+  const bodyHTML = isImpl
+    ? '<p class="sub small">O implemento fica acoplado na Bobcat e muda o poder dela durante a rodada. Use suas moedas para comprar e melhorar cada implemento.</p>' +
+      '<div class="shop-grid">' + IMPLEMENTS.map(cardHTML).join('') + soonHTML('Garra / Pinça') + '</div>'
+    : buildCustomTabHTML();
+
+  const wrenchSvg = '<svg viewBox="0 0 16 16" fill="currentColor"><path d="M13.7 4.3a4 4 0 0 1-5.2 5.2L4.2 13.8a1.2 1.2 0 0 1-1.7-1.7l4.3-4.3a4 4 0 0 1 5.2-5.2L9.8 4.8l1.4 1.4 2.5-1.9z"/></svg>';
+  const paintSvg  = '<svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1.5a6.5 6.5 0 0 0 0 13h1a1.5 1.5 0 0 0 1.2-2.4 1.2 1.2 0 0 1 1-1.9H12a2.5 2.5 0 0 0 2.5-2.5C14.5 4.2 11.6 1.5 8 1.5zM4.5 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm2-3a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm3.5 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg>';
+
   showOverlay(
     '<div class="panel shop">' +
     '<div class="shop-head">' +
-    '<div class="shop-brand">' +
-    '<img class="shop-big" src="' + SHOP_ICON + '" alt="Loja de implementos">' +
-    '<div class="tag">GALPÃO DE IMPLEMENTOS</div>' +
+      '<div class="shop-brand">' +
+        '<img class="shop-big" src="' + SHOP_ICON + '" alt="Loja da Obra">' +
+        '<div class="tag">' + (isImpl ? 'GALP&Atilde;O DE IMPLEMENTOS' : 'PERSONALIZA&Ccedil;&Atilde;O DA BOBCAT') + '</div>' +
+      '</div>' +
+      '<div class="wallet"><span>MOEDAS</span><b><span class="coin-ico"></span>' + Math.floor(coins) + '</b></div>' +
     '</div>' +
-    '<div class="wallet"><span>OURO</span><b>' + Math.floor(coins) + '</b></div>' +
+    '<div class="shop-tabs">' +
+      '<button class="shop-tab' + (isImpl ? ' active' : '') + '" data-shoptab="impl">' + wrenchSvg + '<span>Galp&atilde;o de Implementos</span></button>' +
+      '<button class="shop-tab' + (!isImpl ? ' active' : '') + '" data-shoptab="custom">' + paintSvg + '<span>Personaliza&ccedil;&atilde;o</span><span class="tab-new">NOVO</span></button>' +
     '</div>' +
-    '<p class="sub small">O implemento fica acoplado na Bobcat e muda o poder dela durante a rodada. Use o ouro para melhorar cada implemento.</p>' +
-    '<div class="shop-grid">' + cards + '</div>' +
+    bodyHTML +
     '<div class="row-btns">' +
-    '<button id="btnBack" class="btn ghost">VOLTAR</button>' +
-    startTileHTML('btnPlayShop', 48) +
+      '<button id="btnBack" class="btn ghost">VOLTAR</button>' +
+      startTileHTML('btnPlayShop', 48) +
     '</div>' +
     '</div>'
   );
   uiLock = true;
-  applyIcons(elOverlay);
-  document.getElementById('btnBack').onclick = () => showStart();
-  document.getElementById('btnPlayShop').onclick = () => startGame();
+  if (isImpl) applyIcons(elOverlay);
+  else {
+    renderCustomThumbnails(elOverlay);
+    renderCustomPreview(0);
+  }
+  const newPanel = elOverlay.querySelector('.panel.shop');
+  if (newPanel && savedScroll) newPanel.scrollTop = savedScroll;
+
+  document.getElementById('btnBack').onclick = () => { customPreview = {}; showStart(); };
+  document.getElementById('btnPlayShop').onclick = () => { customPreview = {}; startGame(); };
+
+  const btnPrevNight = document.getElementById('btnPrevNight');
+  if (btnPrevNight) btnPrevNight.onclick = () => { previewNight = !previewNight; blip(520, 620, 0.05, 'triangle', 0.03); showShop(); };
+  const btnPrevJump = document.getElementById('btnPrevJump');
+  if (btnPrevJump) btnPrevJump.onclick = () => {
+    if (previewJumpY >= -1) { previewJumpVy = -195; SFX.jump(); }
+  };
+  const btnClearPreview = document.getElementById('btnClearPreview');
+  if (btnClearPreview) btnClearPreview.onclick = () => { customPreview = {}; blip(360, 240, 0.07, 'square', 0.035); showShop(); };
+  const btnResetLook = document.getElementById('btnResetLook');
+  if (btnResetLook) btnResetLook.onclick = () => {
+    customEquipped = Object.assign({}, CUSTOM_DEFAULTS);
+    customPreview = {};
+    blip(420, 260, 0.09, 'square', 0.04);
+    saveProgress(); showShop();
+    toast('Visual restaurado para o padrão Arafer', 2200);
+  };
+  const btnBuyPreview = document.getElementById('btnBuyPreview');
+  if (btnBuyPreview) btnBuyPreview.onclick = () => {
+    const list = getPreviewUnownedList();
+    const total = list.reduce((a, x) => a + x.item.price, 0);
+    if (!list.length || coins < total) return;
+    coins -= total;
+    for (const x of list) {
+      customOwned[x.cat][x.item.id] = true;
+      customEquipped[x.cat] = x.item.id;
+      delete customPreview[x.cat];
+    }
+    SFX.pick(); setTimeout(() => SFX.point(), 70);
+    saveProgress(); showShop();
+    toast('Combo comprado e equipado na Bobcat!', 2800);
+  };
+
   elOverlay.onclick = (e) => {
+    // 1. Troca de tela principal da loja (Implementos <-> Personalização)
+    const tabBtn = e.target.closest('button[data-shoptab]');
+    if (tabBtn) {
+      const next = tabBtn.dataset.shoptab;
+      if (next !== shopTab) {
+        shopTab = next;
+        blip(560, 680, 0.06, 'triangle', 0.035);
+        showShop();
+      }
+      return;
+    }
+
+    // 2. Troca de sub-categoria dentro da Personalização
+    const subBtn = e.target.closest('button[data-subtab]');
+    if (subBtn) {
+      const next = subBtn.dataset.subtab;
+      if (next !== customSubTab) {
+        customSubTab = next;
+        blip(480, 600, 0.05, 'triangle', 0.03);
+        showShop();
+      }
+      return;
+    }
+
+    // 3. Ações de Personalização (testar, comprar, equipar)
+    const cEl = e.target.closest('[data-cact]');
+    if (cEl) {
+      const cact = cEl.dataset.cact, cat = cEl.dataset.cat, id = cEl.dataset.id;
+      const item = customItemById(cat, id);
+      if (!item) return;
+      if (cact === 'test') {
+        if (customPreview[cat] === id) delete customPreview[cat];
+        else customPreview[cat] = id;
+        blip(620, 760, 0.06, 'triangle', 0.035);
+        showShop();
+      } else if (cact === 'equip' && isCustomOwned(cat, id)) {
+        customEquipped[cat] = id;
+        delete customPreview[cat];
+        SFX.pick(); saveProgress(); showShop();
+        toast(item.name + ' equipado na Bobcat!', 2200);
+      } else if (cact === 'buy' && !isCustomOwned(cat, id)) {
+        if (coins >= item.price) {
+          coins -= item.price;
+          customOwned[cat][id] = true;
+          customEquipped[cat] = id;
+          delete customPreview[cat];
+          SFX.pick(); setTimeout(() => SFX.point(), 65);
+          saveProgress(); showShop();
+          toast(item.name + ' adquirido e equipado!', 2600);
+        } else {
+          blip(300, 180, 0.12, 'square', 0.05);
+          toast('moedas insuficientes · faltam ' + Math.ceil(item.price - coins), 2000);
+        }
+      }
+      return;
+    }
+
+    // 4. Ações do Galpão de Implementos (preservadas 100%)
     const b = e.target.closest('button[data-act]');
     if (!b) return;
     const id = b.dataset.id, act = b.dataset.act, it = implById(id);
@@ -1581,10 +2640,21 @@ function showShop() {
           (id === 'martelo' ? ' · quebra por ' + powerDuration() + 's' : ' · +' + scoopPoints() + ' pts'), 3200);
       } else {
         blip(300, 180, 0.12, 'square', 0.05);
-        toast('ouro insuficiente · faltam ' + Math.ceil(cost - coins), 2000);
+        toast('moedas insuficientes · faltam ' + Math.ceil(cost - coins), 2000);
       }
     }
   };
+}
+
+function customSummaryShort() {
+  const parts = [];
+  const p = customItemById('paint', customEquipped.paint);
+  const s = customItemById('skin', customEquipped.skin);
+  const w = customItemById('wheel', customEquipped.wheel);
+  if (s && s.id !== 'none') parts.push(s.name);
+  else if (p) parts.push(p.name);
+  if (w && w.id !== 'default') parts.push(w.name);
+  return parts.join(' · ') || 'Branco Arafer';
 }
 
 function showStart() {
@@ -1596,7 +2666,8 @@ function showStart() {
     '<p class="sub">Ajude a Bobcat a atravessar a obra sem bater nos montes de terra,<br>caçambas, cones e pombos distra&iacute;dos.</p>' +
     '<div class="loadout">' +
     '<div class="lo-item"><span class="lbl">implemento</span><b>' + (eq ? eq.name + ' nv' + levelOf(eq.id) : 'nenhum (s&oacute; o bra&ccedil;o)') + '</b></div>' +
-    '<div class="lo-item"><span class="lbl">ouro</span><b>' + Math.floor(coins) + '</b></div>' +
+    '<div class="lo-item"><span class="lbl">visual</span><b>' + customSummaryShort() + '</b></div>' +
+    '<div class="lo-item"><span class="lbl">moedas</span><b><span class="coin-ico"></span>' + Math.floor(coins) + '</b></div>' +
     '</div>' +
     '<div class="row-btns center">' +
     shopTileHTML('btnShop', 92) +
@@ -1629,7 +2700,7 @@ function boot() {
 if (document.readyState === 'complete' || document.readyState === 'interactive') boot();
 else window.addEventListener('DOMContentLoaded', boot);
 </script>
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a5fa5a8f3d26f194',t:'MTc5NTU0MzY1MQ=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a5fa5a8f3d26f194',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a5fa8c3b8b479bce',t:'MTc5NTU0NTY4Ng=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a5fa8c3b8b479bce',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a5faa3b568832b23',t:'MTc5NTU0NjY0Nw=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a5faa3b568832b23',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><style id="mp-style">
+<style id="mp-style">
   .mp-entry-btn {
     background: linear-gradient(180deg, #2563eb, #1d4ed8) !important;
     color: #fff !important;
@@ -1777,6 +2848,7 @@ else window.addEventListener('DOMContentLoaded', boot);
               y: GROUND_Y - 36,
               duck: false,
               impl: p.impl || null,
+              custom: p.custom || null,
               alive: true
             });
           }
@@ -1792,6 +2864,7 @@ else window.addEventListener('DOMContentLoaded', boot);
           opp.duck = msg.duck;
           opp.impl = msg.impl;
           opp.alive = msg.alive;
+          if (msg.custom) opp.custom = msg.custom;
         }
       } else if (msg.type === 'player_died') {
         const opp = this.opponents.get(msg.id);
@@ -1842,14 +2915,14 @@ else window.addEventListener('DOMContentLoaded', boot);
       document.getElementById('mpCreate').onclick = () => {
         const name = (document.getElementById('mpName').value || 'Operador').trim();
         this.setPlayerName(name);
-        this.connect(() => this.send({ type: 'create_room', name }));
+        this.connect(() => this.send({ type: 'create_room', name, custom: getActiveCustom() }));
       };
       document.getElementById('mpJoin').onclick = () => {
         const name = (document.getElementById('mpName').value || 'Operador').trim();
         const code = (document.getElementById('mpCode').value || '').trim().toUpperCase();
         if (!code) { this.errorMsg = 'Digite o código da sala.'; this.openMenu(); return; }
         this.setPlayerName(name);
-        this.connect(() => this.send({ type: 'join_room', name, code }));
+        this.connect(() => this.send({ type: 'join_room', name, code, custom: getActiveCustom() }));
       };
     },
 
@@ -1964,6 +3037,7 @@ else window.addEventListener('DOMContentLoaded', boot);
           y: Math.round(bob.y),
           duck: false,
           impl: equippedId || null,
+          custom: getActiveCustom(),
           alive: !bob.dead
         });
         this.renderHud();
@@ -2008,7 +3082,7 @@ else window.addEventListener('DOMContentLoaded', boot);
         const pre = opp.impl === 'pa' ? 'bob_pa_' : opp.impl === 'martelo' ? 'bob_ma_' : 'bob_';
         const f = Math.floor(time * 10) % 2;
         const sprName = pre + 'a' + (f + 1);
-        drawSprite(sprName, ox, opp.y, false);
+        drawCustomBobcat(ctx, sprName, ox, opp.y, opp.custom, time);
         ctx.fillStyle = opp.color;
         ctx.font = 'bold 7px monospace';
         ctx.textAlign = 'center';
@@ -2021,5 +3095,6 @@ else window.addEventListener('DOMContentLoaded', boot);
   window.mp = mp;
 })();
 </script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"1954b47c125f43f8b4338b3c4f804e4f","spa":2}' crossorigin="anonymous"></script>
 </body>
 </html>
